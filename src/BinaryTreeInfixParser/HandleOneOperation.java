@@ -17,7 +17,7 @@ public class HandleOneOperation {
         } else if (operator.equals("*")){
             result = leftInt * rightInt;
         } else if (operator.equals("/")){
-            result = leftInt / rightInt;
+              result = leftInt / rightInt;
         } else if (operator.equals("^")){
             result = (int)Math.pow(leftInt,rightInt);
         } else if (operator.equals("%")){

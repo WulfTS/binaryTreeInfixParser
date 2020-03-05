@@ -21,7 +21,7 @@ public class ExpressionTree {
     List<String> operators = Arrays.asList("+","-","*","/","^","%",">","<",">=","<=","==","!=", "||", "&&");
 
 
-    boolean isOperator(String s) {
+    boolean isOperator(String s) throws ArithmeticException{
         return operators.contains(s);
     }
     //https://www.geeksforgeeks.org/evaluation-of-expression-tree/ converted from C++ to java code
@@ -42,7 +42,10 @@ public class ExpressionTree {
             // Evaluate right subtree
             int r_val = eval(root.right);
 
-            //TODO: Check for div by 0 exception
+            // divide by zero found
+            if (r_val == 0 && root.value == "/"){
+            throw new ArithmeticException();
+            }
             return HandleOneOperation.handleOneOperation(l_val, r_val, root.value);
     }
 
