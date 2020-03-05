@@ -13,7 +13,12 @@ public class BinaryTreeExpressions {
 
         for(Queue<String> s : expressions){
             String[] postfixString = infixToPostfixConverter.convertInfixToPostfix(s).split(" ");
-            System.out.println(expressionTree.eval(expressionTree.constructTree(postfixString)));
+            // catch divide by zero
+            try {
+                System.out.println("Result: " + expressionTree.eval(expressionTree.constructTree(postfixString)));
+            } catch (ArithmeticException e) {
+                System.out.println("Unable to parse expression: " + e.getMessage());
+            }
         }
 
     }

@@ -17,12 +17,7 @@ public class HandleOneOperation {
         } else if (operator.equals("*")){
             result = leftInt * rightInt;
         } else if (operator.equals("/")){
-            if (rightInt == 0) {
-              System.out.println("Divide by zero not allowed, evaluation of expression invalid.");
-              result = 0;
-            } else {
               result = leftInt / rightInt;
-            }
         } else if (operator.equals("^")){
             result = (int)Math.pow(leftInt,rightInt);
         } else if (operator.equals("%")){
